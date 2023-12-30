@@ -30,8 +30,8 @@ public class JavaQuestionService implements QuestionService{
         return null;
     }
 
-    @Override
-    public getRandomQuestion() {
-
-    }
+//    @Override
+//    public getRandomQuestion() {
+//
+//    }
 }
