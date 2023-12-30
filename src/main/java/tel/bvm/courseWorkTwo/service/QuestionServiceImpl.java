@@ -2,6 +2,7 @@ package tel.bvm.courseWorkTwo.service;
 
 import tel.bvm.courseWorkTwo.generator.Random;
 import tel.bvm.courseWorkTwo.scheme.JavaQuestion;
+import tel.bvm.courseWorkTwo.scheme.Question;
 
 import java.util.Collection;
 
@@ -14,12 +15,12 @@ public abstract class QuestionServiceImpl implements QuestionService{
     }
 
     @Override
-    public JavaQuestion add(String question, String answer) {
+    public Question add(String question, String answer) {
         return null;
     }
 
     @Override
-    public JavaQuestion remove(JavaQuestion javaQuestion) {
+    public Question remove(JavaQuestion javaQuestion) {
         return null;
     }
 
