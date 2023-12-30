@@ -8,31 +8,35 @@ import tel.bvm.courseWorkTwo.scheme.JavaQuestion;
 import java.util.Collection;
 
 @Service
-@Qualifier
-public class JavaQuestionService implements QuestionService{
-    private JavaQuestionService QuestionService;
-
-    public JavaQuestionService(JavaQuestionService questionService) {
-        QuestionService = questionService;
+public class JavaQuestionService extends QuestionServiceImpl{
+    public JavaQuestionService(QuestionServiceImpl questionService) {
+        super(questionService);
     }
 
-    @Override
-    public JavaQuestion add(String question, String answer) {
-        return null;
-    }
-
-    @Override
-    public JavaQuestion remove(JavaQuestion javaQuestion) {
-        return null;
-    }
-
-    @Override
-    public Collection<JavaQuestion> getAll() {
-        return null;
-    }
-
-    @Override
-    public Random getRandomQuestion(int maxValue) {
-        return null;
-    }
+//public class JavaQuestionService implements QuestionService{
+//    private JavaQuestionService QuestionService;
+//
+//    public JavaQuestionService(JavaQuestionService questionService) {
+//        QuestionService = questionService;
+//    }
+//
+//    @Override
+//    public JavaQuestion add(String question, String answer) {
+//        return null;
+//    }
+//
+//    @Override
+//    public JavaQuestion remove(JavaQuestion javaQuestion) {
+//        return null;
+//    }
+//
+//    @Override
+//    public Collection<JavaQuestion> getAll() {
+//        return null;
+//    }
+//
+//    @Override
+//    public Random getRandomQuestion(int maxValue) {
+//        return null;
+//    }
 }
