@@ -9,9 +9,9 @@ import java.util.Collection;
 public interface QuestionService {
     Question add(String question, String answer);
 
-    Question remove(JavaQuestion javaQuestion);
+    Question remove(Question Question);
 
-    Collection<JavaQuestion> getAll();
+    Collection<Question> getAll();
 
     Random getRandomQuestion(int maxValue);
 }
