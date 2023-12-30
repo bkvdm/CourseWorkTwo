@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Random {
-
     public int getRandomGenerator(int maxValue) {
         java.util.Random random = new java.util.Random();
         int minValue = 1;
