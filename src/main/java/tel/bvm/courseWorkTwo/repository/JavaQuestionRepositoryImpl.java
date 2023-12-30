@@ -1,4 +1,12 @@
 package tel.bvm.courseWorkTwo.repository;
 
-public class JavaQuestionRepositoryImpl {
+import org.springframework.stereotype.Service;
+
+@Service
+public class JavaQuestionRepositoryImpl implements QuestionRepository{
+    private JavaQuestionRepositoryImpl QuestionRepository;
+
+    public JavaQuestionRepositoryImpl(JavaQuestionRepositoryImpl questionRepository) {
+        QuestionRepository = questionRepository;
+    }
 }
