@@ -2,6 +2,7 @@ package tel.bvm.courseWorkTwo.service;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+import tel.bvm.courseWorkTwo.generator.Random;
 import tel.bvm.courseWorkTwo.scheme.JavaQuestion;
 
 import java.util.Collection;
@@ -30,8 +31,8 @@ public class JavaQuestionService implements QuestionService{
         return null;
     }
 
-//    @Override
-//    public getRandomQuestion() {
-//
-//    }
+    @Override
+    public Random getRandomQuestion(int maxValue) {
+        return null;
+    }
 }
