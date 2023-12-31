@@ -8,35 +8,38 @@ import tel.bvm.courseworktwo.scheme.MathQuestion;
 import java.util.Collection;
 
 @Repository
-public class JavaQuestionRepositoryImpl implements QuestionRepository{
+public class JavaQuestionRepositoryImpl extends QuestionRepositoryImpl{
+    protected JavaQuestionRepositoryImpl(QuestionRepositoryImpl questionRepository) {
+        super(questionRepository);
+    }
 //    private JavaQuestionRepositoryImpl QuestionRepository;
 //
 //    public JavaQuestionRepositoryImpl(JavaQuestionRepositoryImpl questionRepository) {
 //        QuestionRepository = questionRepository;
 //    }
 
-    @Override
-    public MathQuestion add(String question, String answer) {
-        return null;
-    }
-
-    @Override
-    public JavaQuestion remove(JavaQuestion question) {
-        return null;
-    }
-
-    @Override
-    public MathQuestion remove(MathQuestion question) {
-        return null;
-    }
-
-    @Override
-    public Collection<MathQuestion> getAll() {
-        return null;
-    }
-
-    @Override
-    public Random getRandomQuestion(int maxValue) {
-        return null;
-    }
+//    @Override
+//    public JavaQuestion add(String question, String answer) {
+//        return null;
+//    }
+//
+//    @Override
+//    public JavaQuestion remove(JavaQuestion question) {
+//        return null;
+//    }
+//
+//    @Override
+//    public MathQuestion remove(MathQuestion question) {
+//        return null;
+//    }
+//
+//    @Override
+//    public Collection<MathQuestion> getAll() {
+//        return null;
+//    }
+//
+//    @Override
+//    public Random getRandomQuestion(int maxValue) {
+//        return null;
+//    }
 }
