@@ -24,6 +24,8 @@ public abstract class QuestionServiceImpl implements QuestionService{
         return null;
     }
 
+    public abstract JavaQuestion remove(JavaQuestion question);
+
     @Override
     public Collection<Question> getAll() {
         return null;

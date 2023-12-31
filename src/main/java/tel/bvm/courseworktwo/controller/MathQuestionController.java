@@ -13,5 +13,6 @@ public class MathQuestionController {
     public MathQuestionController (@Qualifier("mathQuestionService") QuestionService questionService){
         this.questionService = questionService;
     }
+//    ”/exam/math/(add/remove/find)”
 
 }

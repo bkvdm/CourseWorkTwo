@@ -2,6 +2,7 @@ package tel.bvm.courseworktwo.service;
 
 import org.springframework.stereotype.Service;
 import tel.bvm.courseworktwo.generator.Random;
+import tel.bvm.courseworktwo.repository.JavaQuestionRepositoryImpl;
 import tel.bvm.courseworktwo.scheme.JavaQuestion;
 import tel.bvm.courseworktwo.scheme.Question;
 
@@ -13,14 +14,21 @@ public class JavaQuestionService extends QuestionServiceImpl{
         super(questionService);
     }
 
-    @Override
-    public JavaQuestion add(String question, String answer) {
-        return null;
+    public JavaQuestionRepositoryImpl javaQuestionRepository;
+
+    public JavaQuestionService(QuestionServiceImpl questionService, JavaQuestionRepositoryImpl javaQuestionRepository) {
+        super(questionService);
+        this.javaQuestionRepository = javaQuestionRepository;
     }
 
     @Override
-    public JavaQuestion remove(Question Question) {
-        return null;
+    public JavaQuestion add(String question, String answer) {
+        return javaQuestionRepository.add(question, answer);
+    }
+
+    @Override
+    public JavaQuestion remove(JavaQuestion question) {
+        return javaQuestionRepository.remove(question);
     }
 
     @Override

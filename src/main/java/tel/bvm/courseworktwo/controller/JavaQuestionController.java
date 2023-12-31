@@ -13,4 +13,5 @@ public class JavaQuestionController {
     public JavaQuestionController(@Qualifier("javaQuestionService") QuestionService questionService){
         this.questionService = questionService;
     }
+//    ”/exam/java/(add/remove/find)”
 }
