@@ -1,4 +1,4 @@
-package tel.bvm.courseWorkTwo.scheme;
+package tel.bvm.courseworktwo.scheme;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package tel.bvm.courseWorkTwo.generator;
+package tel.bvm.courseworktwo.generator;
 
 import org.springframework.stereotype.Component;
 

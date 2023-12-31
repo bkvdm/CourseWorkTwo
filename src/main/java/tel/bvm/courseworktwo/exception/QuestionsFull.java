@@ -1,4 +1,4 @@
-package tel.bvm.courseWorkTwo.exception;
+package tel.bvm.courseworktwo.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

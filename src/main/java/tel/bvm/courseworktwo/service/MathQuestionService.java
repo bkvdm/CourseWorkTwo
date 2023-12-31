@@ -1,11 +1,10 @@
-package tel.bvm.courseWorkTwo.service;
+package tel.bvm.courseworktwo.service;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-import tel.bvm.courseWorkTwo.generator.Random;
-import tel.bvm.courseWorkTwo.scheme.JavaQuestion;
-import tel.bvm.courseWorkTwo.scheme.MathQuestion;
-import tel.bvm.courseWorkTwo.scheme.Question;
+import tel.bvm.courseworktwo.generator.Random;
+import tel.bvm.courseworktwo.scheme.JavaQuestion;
+import tel.bvm.courseworktwo.scheme.MathQuestion;
+import tel.bvm.courseworktwo.scheme.Question;
 
 import java.util.Collection;
 
@@ -26,7 +25,7 @@ public class MathQuestionService extends QuestionServiceImpl{
     }
 
     @Override
-    public Collection<MathQuestion> getAll() {
+    public Collection<Question> getAll() {
         return null;
     }
 
