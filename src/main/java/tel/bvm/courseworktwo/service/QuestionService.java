@@ -10,6 +10,9 @@ public interface QuestionService {
 
     Question remove(Question Question);
 
+    //    public abstract MathQuestion remove(MathQuestion question);
+    Question find(String question);
+
     Collection<Question> getAll();
 //    Collection<JavaQuestion> getAll();
 //    Collection<MathQuestion> getAll();

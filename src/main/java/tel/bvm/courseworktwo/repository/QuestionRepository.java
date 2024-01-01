@@ -9,6 +9,8 @@ public interface QuestionRepository {
 
     Question remove(Question question);
 
+    Question find(String question);
+
     Collection<Question> getAll();
 }
 

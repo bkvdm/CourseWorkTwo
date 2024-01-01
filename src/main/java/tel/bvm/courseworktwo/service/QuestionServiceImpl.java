@@ -5,7 +5,7 @@ import tel.bvm.courseworktwo.scheme.Question;
 
 import java.util.Collection;
 
-public abstract class QuestionServiceImpl implements QuestionService{
+public abstract class QuestionServiceImpl implements QuestionService {
 
     private QuestionServiceImpl QuestionService;
 
@@ -24,8 +24,6 @@ public abstract class QuestionServiceImpl implements QuestionService{
     }
 
 //    public abstract JavaQuestion remove(JavaQuestion question);
-
-//    public abstract MathQuestion remove(MathQuestion question);
 
     @Override
     public Collection<Question> getAll() {

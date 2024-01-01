@@ -31,6 +31,11 @@ public class JavaQuestionService extends QuestionServiceImpl {
     }
 
     @Override
+    public Question find(String question) {
+        return javaQuestionRepository.find(question);
+    }
+
+    @Override
     public Collection<Question> getAll() {
         return javaQuestionRepository.getAll();
     }

@@ -22,11 +22,15 @@ public abstract class QuestionRepositoryImpl implements QuestionRepository {
     }
 
     @Override
+    public Question find(String question) {
+        return null;
+    }
+
+    @Override
     public Collection<Question> getAll() {
         return null;
     }
 }
-
 //    @Override
 //    public JavaQuestion remove(JavaQuestion javaQuestion) {
 //        return null;
