@@ -8,14 +8,14 @@ import tel.bvm.courseworktwo.repository.MathQuestionRepositoryImpl;
 import tel.bvm.courseworktwo.repository.QuestionRepository;
 
 @Component
-public class PreliminaryQuestions {
+public class DefaultQuestions {
 
     private JavaQuestionRepositoryImpl javaQuestionRepository;
 
     private MathQuestionRepositoryImpl mathQuestionRepository;
 
     @Autowired
-    public PreliminaryQuestions(QuestionRepository QuestionRepository) {
+    public DefaultQuestions(QuestionRepository QuestionRepository) {
 //        this.javaQuestionRepository = javaQuestionRepository;
 //        this.mathQuestionRepository = mathQuestionRepository;
     }

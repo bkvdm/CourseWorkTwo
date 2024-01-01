@@ -11,10 +11,10 @@ public class ExaminerServiceImpl implements ExaminerService {
 
     private JavaQuestionService javaQuestionService;
     private MathQuestionService mathQuestionService;
-    private ExaminerServiceImpl examinerService;
+//    private ExaminerService examinerService;
 
     @Autowired
-    public ExaminerServiceImpl(JavaQuestionService javaQuestionService, MathQuestionService mathQuestionService, ExaminerServiceImpl examinerService) {
+    public ExaminerServiceImpl(JavaQuestionService javaQuestionService, MathQuestionService mathQuestionService) {
         this.javaQuestionService = javaQuestionService;
         this.mathQuestionService = mathQuestionService;
 //        this.examinerService = examinerService;

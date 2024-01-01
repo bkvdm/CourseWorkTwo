@@ -2,7 +2,7 @@ package tel.bvm.courseworktwo.scheme;
 
 import java.util.Objects;
 
-public abstract class Question {
+public class Question {
     private String question;
     private String answer;
     public Question(String question, String answer) {

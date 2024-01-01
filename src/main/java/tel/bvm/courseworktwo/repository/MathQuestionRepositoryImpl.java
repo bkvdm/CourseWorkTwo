@@ -1,17 +1,13 @@
 package tel.bvm.courseworktwo.repository;
 
 import org.springframework.stereotype.Repository;
-import tel.bvm.courseworktwo.generator.Random;
-import tel.bvm.courseworktwo.scheme.JavaQuestion;
-import tel.bvm.courseworktwo.scheme.MathQuestion;
-
-import java.util.Collection;
 
 @Repository
-public class MathQuestionRepositoryImpl extends QuestionRepositoryImpl{
+public class MathQuestionRepositoryImpl extends QuestionRepositoryImpl {
     protected MathQuestionRepositoryImpl(QuestionRepositoryImpl questionRepository) {
         super(questionRepository);
     }
+}
 //    private MathQuestionRepositoryImpl QuestionRepository;
 //
 //    public MathQuestionRepositoryImpl(MathQuestionRepositoryImpl questionRepository) {
@@ -42,4 +38,4 @@ public class MathQuestionRepositoryImpl extends QuestionRepositoryImpl{
 //    public Random getRandomQuestion(int maxValue) {
 //        return null;
 //    }
-}
+//}

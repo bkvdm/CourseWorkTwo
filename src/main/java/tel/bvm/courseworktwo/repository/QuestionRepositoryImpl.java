@@ -1,7 +1,5 @@
 package tel.bvm.courseworktwo.repository;
 
-import tel.bvm.courseworktwo.generator.Random;
-import tel.bvm.courseworktwo.scheme.JavaQuestion;
 import tel.bvm.courseworktwo.scheme.Question;
 
 import java.util.Collection;
@@ -14,12 +12,7 @@ public abstract class QuestionRepositoryImpl implements QuestionRepository {
     }
 
     @Override
-    public JavaQuestion add(String question, String answer) {
-        return null;
-    }
-
-    @Override
-    public JavaQuestion remove(JavaQuestion javaQuestion) {
+    public Question add(String question, String answer) {
         return null;
     }
 
@@ -32,9 +25,13 @@ public abstract class QuestionRepositoryImpl implements QuestionRepository {
     public Collection<Question> getAll() {
         return null;
     }
-
-    @Override
-    public Random getRandomQuestion(int maxValue) {
-        return null;
-    }
 }
+
+//    @Override
+//    public JavaQuestion remove(JavaQuestion javaQuestion) {
+//        return null;
+//    }
+//    @Override
+//    public Random getRandomQuestion(int maxValue) {
+//        return null;
+//    }

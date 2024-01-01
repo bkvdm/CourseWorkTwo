@@ -3,13 +3,12 @@ package tel.bvm.courseworktwo.service;
 import org.springframework.stereotype.Service;
 import tel.bvm.courseworktwo.generator.Random;
 import tel.bvm.courseworktwo.repository.JavaQuestionRepositoryImpl;
-import tel.bvm.courseworktwo.scheme.JavaQuestion;
 import tel.bvm.courseworktwo.scheme.Question;
 
 import java.util.Collection;
 
 @Service
-public class JavaQuestionService extends QuestionServiceImpl{
+public class JavaQuestionService extends QuestionServiceImpl {
     public JavaQuestionService(QuestionServiceImpl questionService) {
         super(questionService);
     }
@@ -22,26 +21,30 @@ public class JavaQuestionService extends QuestionServiceImpl{
     }
 
     @Override
-    public JavaQuestion add(String question, String answer) {
+    public Question add(String question, String answer) {
         return javaQuestionRepository.add(question, answer);
     }
 
     @Override
-    public JavaQuestion remove(JavaQuestion question) {
+    public Question remove(Question question) {
         return javaQuestionRepository.remove(question);
     }
 
     @Override
     public Collection<Question> getAll() {
-        return null;
+        return javaQuestionRepository.getAll();
     }
 
     @Override
     public Random getRandomQuestion(int maxValue) {
         return null;
-}
     }
+}
 
+//    @Override
+//    public MathQuestion remove(MathQuestion question) {
+//        return null;
+//    }
 //public class JavaQuestionService implements QuestionService{
 //    private JavaQuestionService QuestionService;
 //
@@ -67,4 +70,8 @@ public class JavaQuestionService extends QuestionServiceImpl{
 //    @Override
 //    public Random getRandomQuestion(int maxValue) {
 //        return null;
+//    }
+//    @Override
+//    public JavaQuestion add(String question, String answer) {
+//        return javaQuestionRepository.add(question, answer);
 //    }

@@ -1,7 +1,6 @@
 package tel.bvm.courseworktwo.service;
 
 import tel.bvm.courseworktwo.generator.Random;
-import tel.bvm.courseworktwo.scheme.JavaQuestion;
 import tel.bvm.courseworktwo.scheme.Question;
 
 import java.util.Collection;
@@ -24,7 +23,9 @@ public abstract class QuestionServiceImpl implements QuestionService{
         return null;
     }
 
-    public abstract JavaQuestion remove(JavaQuestion question);
+//    public abstract JavaQuestion remove(JavaQuestion question);
+
+//    public abstract MathQuestion remove(MathQuestion question);
 
     @Override
     public Collection<Question> getAll() {

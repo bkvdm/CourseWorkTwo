@@ -14,5 +14,4 @@ public class MathQuestionController {
         this.questionService = questionService;
     }
 //    ”/exam/math/(add/remove/find)”
-
 }
