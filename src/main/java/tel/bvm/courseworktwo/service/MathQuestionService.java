@@ -1,12 +1,14 @@
 package tel.bvm.courseworktwo.service;
 
 import org.springframework.stereotype.Service;
-import tel.bvm.courseworktwo.generator.Random;
-import tel.bvm.courseworktwo.repository.JavaQuestionRepositoryImpl;
+import tel.bvm.courseworktwo.generator.RandomIndex;
 import tel.bvm.courseworktwo.repository.MathQuestionRepositoryImpl;
 import tel.bvm.courseworktwo.scheme.Question;
+import tel.bvm.courseworktwo.generator.RandomIndex;
 
 import java.util.Collection;
+
+import static tel.bvm.courseworktwo.generator.RandomIndex.getRandomGenerator;
 
 @Service
 public class MathQuestionService extends QuestionServiceImpl {
@@ -42,7 +44,9 @@ public class MathQuestionService extends QuestionServiceImpl {
     }
 
     @Override
-    public Random getRandomQuestion(int maxValue) {
+    public Question getRandomQuestion() {
+        int selectedQuestion = getRandomGenerator(mathQuestionRepository.getAll().size() - 1);
+        Question q = new Question();
         return null;
     }
 }

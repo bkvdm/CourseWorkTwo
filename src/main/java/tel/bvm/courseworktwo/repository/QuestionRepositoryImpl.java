@@ -51,11 +51,11 @@ public abstract class QuestionRepositoryImpl implements QuestionRepository {
     @Override
     public Collection<Question> getAll() {
         if (registerQuestionsWithAnswers.isEmpty()) {
-            throw new QuestionsNull("Список вопросов не заполнен");
+            throw new QuestionsNull("Список вопросов пуст");
         }
         return registerQuestionsWithAnswers.entrySet()
                 .stream()
-                .map(e->new Question(e.getKey(),e.getValue()))
+                .map(e -> new Question(e.getKey(),e.getValue()))
                 .collect(Collectors.toList());
     }
 }

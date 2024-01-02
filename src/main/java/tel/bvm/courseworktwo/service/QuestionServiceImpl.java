@@ -1,6 +1,6 @@
 package tel.bvm.courseworktwo.service;
 
-import tel.bvm.courseworktwo.generator.Random;
+import tel.bvm.courseworktwo.generator.RandomIndex;
 import tel.bvm.courseworktwo.scheme.Question;
 
 import java.util.Collection;
@@ -31,7 +31,7 @@ public abstract class QuestionServiceImpl implements QuestionService {
     }
 
     @Override
-    public Random getRandomQuestion(int maxValue) {
+    public Question getRandomQuestion() {
         return null;
     }
 }
