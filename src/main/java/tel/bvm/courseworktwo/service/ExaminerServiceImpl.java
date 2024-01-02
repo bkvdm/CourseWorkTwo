@@ -24,7 +24,6 @@ public class ExaminerServiceImpl implements ExaminerService {
 
     @Override
     public Collection<Question> getQuestion(int amount) {
-
         List<Question> listExamQuestions = new ArrayList<>();
         if (mathQuestionService.getAll().isEmpty()) {
         } else {
@@ -39,7 +38,14 @@ public class ExaminerServiceImpl implements ExaminerService {
                 }
             }
         }
-
+//    public Collection<Question> getQuestions(int amount) {
+//        return mathQuestionService
+//                .getAll()
+//                .stream()
+//                .filter(q -> !listExamQuestions.contains(q))
+//                .limit(amount)
+//                .collect(Collectors.toCollection(ArrayList::new));
+//    }
         if (javaQuestionService.getAll().isEmpty()) {
         } else {
             if (amount == javaQuestionService.getAll().size()) {
@@ -56,10 +62,5 @@ public class ExaminerServiceImpl implements ExaminerService {
         return listExamQuestions;
     }
 }
-//            for (int i = 0; i < amount; i++) {
-//                if (!listExamQuestions.contains(mathQuestionService.getRandomQuestion())) {
-//                    listExamQuestions.add(mathQuestionService.getRandomQuestion());
-//                } else {
-//
-//                }
-//            }
+
+
