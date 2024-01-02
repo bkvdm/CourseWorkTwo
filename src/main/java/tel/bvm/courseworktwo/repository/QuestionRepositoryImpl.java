@@ -13,6 +13,7 @@ public abstract class QuestionRepositoryImpl implements QuestionRepository {
 
     @Override
     public Question add(String question, String answer) {
+//        Question
         return null;
     }
 

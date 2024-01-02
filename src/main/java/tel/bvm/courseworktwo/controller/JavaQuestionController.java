@@ -15,31 +15,31 @@ import java.util.Collection;
 @RequestMapping("/exam/java")
 public class JavaQuestionController {
 
-    private QuestionService questionService;
+    private QuestionService javaQuestionService;
 
-    public JavaQuestionController(@Qualifier("javaQuestionService") QuestionService questionService) {
-        this.questionService = questionService;
+    public JavaQuestionController(@Qualifier("javaQuestionService") QuestionService question) {
+        this.javaQuestionService = question;
     }
 
     @GetMapping()
     public Collection<Question> getAll() {
-        return questionService.getAll();
+        return javaQuestionService.getAll();
     }
 
     @GetMapping("/add")
     public Question add(@RequestParam String question, @RequestParam String answer) {
-        return questionService.add(question, answer);
+        return javaQuestionService.add(question, answer);
     }
 
     @GetMapping("/remove")
     public Question remove(@RequestParam String question, @RequestParam String answer) {
         Question javaQuestionRemove = new Question(question, answer);
-        return questionService.remove(javaQuestionRemove);
+        return javaQuestionService.remove(javaQuestionRemove);
     }
 
     @GetMapping("/find")
     public Question find(@RequestParam String question) {
-        return questionService.find(question);
+        return javaQuestionService.find(question);
     }
 }
 //    ”/exam/java/(add/remove/find)”
