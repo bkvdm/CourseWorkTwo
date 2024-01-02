@@ -34,6 +34,7 @@ public class ExaminerServiceImpl implements ExaminerService {
             throw new QuestionsFull("Количество экзаменационных вопросов, больше их количества в списке");
         } else {
             listExamQuestions.add(javaQuestionService.getRandomQuestion());
+            listExamQuestions.add(mathQuestionService.getRandomQuestion());
             while ((listExamQuestions.size() == amount)) {
                 if (listExamQuestions.contains(javaQuestionService.getRandomQuestion()) ||
                         listExamQuestions.contains(mathQuestionService.getRandomQuestion())) {
