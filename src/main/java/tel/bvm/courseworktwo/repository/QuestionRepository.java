@@ -14,7 +14,7 @@ public interface QuestionRepository {
     Collection<Question> getAll();
 }
 
-    //    JavaQuestion remove(JavaQuestion javaQuestion);
+//    JavaQuestion remove(JavaQuestion javaQuestion);
 //    Random getRandomQuestion(int maxValue);
 //    MathQuestion add(String question, String answer);
 //

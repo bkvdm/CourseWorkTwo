@@ -55,7 +55,7 @@ public abstract class QuestionRepositoryImpl implements QuestionRepository {
         }
         return registerQuestionsWithAnswers.entrySet()
                 .stream()
-                .map(e -> new Question(e.getKey(),e.getValue()))
+                .map(e -> new Question(e.getKey(), e.getValue()))
                 .collect(Collectors.toList());
     }
 }
