@@ -29,26 +29,47 @@ public class ExaminerServiceImpl implements ExaminerService {
 
         int possibleNumberExamQuestions = mathQuestionService.getAll().size() + javaQuestionService.getAll().size();
         List<Question> listExamQuestions = new ArrayList<>();
-        Question questionOnly = new Question("", "Ответь на вопрос зкзамена");
 
         if (amount > possibleNumberExamQuestions) {
             throw new QuestionsFull("Количество экзаменационных вопросов, больше их количества в списке");
         } else {
+            listExamQuestions.add(javaQuestionService.getRandomQuestion());
             while ((listExamQuestions.size() == amount)) {
-                if (listExamQuestions.contains(javaQuestionService.getRandomQuestion())) {
+                if (listExamQuestions.contains(javaQuestionService.getRandomQuestion()) ||
+                        listExamQuestions.contains(mathQuestionService.getRandomQuestion())) {
                 } else {
-                    questionOnly.setQuestion(javaQuestionService.getRandomQuestion().getQuestion());
-                    listExamQuestions.add(questionOnly);
-                }
-                if (listExamQuestions.contains(mathQuestionService.getRandomQuestion())) {
-                } else {
-                    questionOnly.setQuestion(mathQuestionService.getRandomQuestion().getQuestion());
-                    listExamQuestions.add(mathQuestionService.getRandomQuestion());
+                    listExamQuestions.add(new Question(javaQuestionService.getRandomQuestion().getQuestion(), ""));
+                    listExamQuestions.add(new Question(mathQuestionService.getRandomQuestion().getQuestion(), ""));
                 }
             }
             return listExamQuestions;
         }
     }
+
+//    public Collection<Question> getQuestion(int amount) {
+//
+//        int possibleNumberExamQuestions = mathQuestionService.getAll().size() + javaQuestionService.getAll().size();
+//        List<Question> listExamQuestions = new ArrayList<>();
+//        Question questionOnly = new Question("", "Ответь на вопрос зкзамена");
+//
+//        if (amount > possibleNumberExamQuestions) {
+//            throw new QuestionsFull("Количество экзаменационных вопросов, больше их количества в списке");
+//        } else {
+//            while ((listExamQuestions.size() == amount)) {
+//                if (listExamQuestions.contains(javaQuestionService.getRandomQuestion())) {
+//                } else {
+//                    questionOnly.setQuestion(javaQuestionService.getRandomQuestion().getQuestion());
+//                    listExamQuestions.add(questionOnly);
+//                }
+//                if (listExamQuestions.contains(mathQuestionService.getRandomQuestion())) {
+//                } else {
+//                    questionOnly.setQuestion(mathQuestionService.getRandomQuestion().getQuestion());
+//                    listExamQuestions.add(mathQuestionService.getRandomQuestion());
+//                }
+//            }
+//            return listExamQuestions;
+//        }
+//    }
 
 //
 //        if (javaQuestionService.getAll().isEmpty() || mathQuestionService.getAll().isEmpty()) {
