@@ -2,6 +2,7 @@ package tel.bvm.courseworktwo.repository;
 
 import tel.bvm.courseworktwo.exception.QuestionAlreadyAdded;
 import tel.bvm.courseworktwo.exception.QuestionNotFound;
+import tel.bvm.courseworktwo.exception.QuestionsNull;
 import tel.bvm.courseworktwo.scheme.Question;
 
 import java.util.Collection;
@@ -42,13 +43,16 @@ public abstract class QuestionRepositoryImpl implements QuestionRepository {
     @Override
     public Question find(String question) {
         if (registerQuestionsWithAnswers.get(question) == null) {
-            throw new QuestionNotFound();
+            throw new QuestionNotFound("Вопрос не найден или не дополнен в список вопросов");
         }
         return new Question(question, registerQuestionsWithAnswers.get(question));
     }
 
     @Override
     public Collection<Question> getAll() {
+        if (registerQuestionsWithAnswers.isEmpty()) {
+            throw new QuestionsNull("Список вопросов не заполнен");
+        }
         return registerQuestionsWithAnswers.entrySet()
                 .stream()
                 .map(e->new Question(e.getKey(),e.getValue()))
