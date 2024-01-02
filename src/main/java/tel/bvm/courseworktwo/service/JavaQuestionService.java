@@ -5,7 +5,11 @@ import tel.bvm.courseworktwo.generator.RandomIndex;
 import tel.bvm.courseworktwo.repository.JavaQuestionRepositoryImpl;
 import tel.bvm.courseworktwo.scheme.Question;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+
+import static tel.bvm.courseworktwo.generator.RandomIndex.getRandomGenerator;
 
 @Service
 public class JavaQuestionService extends QuestionServiceImpl {
@@ -42,7 +46,9 @@ public class JavaQuestionService extends QuestionServiceImpl {
 
     @Override
     public Question getRandomQuestion() {
-        return null;
+        int selectedQuestionIndex = getRandomGenerator(javaQuestionRepository.getAll().size() - 1);
+        List<Question> selectedQuestion = new ArrayList<>(javaQuestionRepository.getAll());
+        return selectedQuestion.get(selectedQuestionIndex);
     }
 }
 
