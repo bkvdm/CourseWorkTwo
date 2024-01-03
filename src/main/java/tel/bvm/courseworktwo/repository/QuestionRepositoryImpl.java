@@ -1,5 +1,6 @@
 package tel.bvm.courseworktwo.repository;
 
+import org.springframework.stereotype.Service;
 import tel.bvm.courseworktwo.exception.QuestionAlreadyAdded;
 import tel.bvm.courseworktwo.exception.QuestionNotFound;
 import tel.bvm.courseworktwo.exception.QuestionsNull;
@@ -9,7 +10,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
-
+//@Service
 public abstract class QuestionRepositoryImpl implements QuestionRepository {
     private QuestionRepositoryImpl questionRepository;
 

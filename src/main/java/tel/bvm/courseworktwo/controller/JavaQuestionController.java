@@ -5,7 +5,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import tel.bvm.courseworktwo.repository.JavaQuestionRepositoryImpl;
 import tel.bvm.courseworktwo.scheme.Question;
 import tel.bvm.courseworktwo.service.QuestionService;
 
