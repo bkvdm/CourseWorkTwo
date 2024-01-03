@@ -1,4 +1,4 @@
-package tel.bvm.courseWorkTwo;
+package tel.bvm.courseworktwo;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
