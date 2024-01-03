@@ -1,7 +1,9 @@
 package tel.bvm.courseworktwo.service;
 
+import org.springframework.stereotype.Service;
 import tel.bvm.courseworktwo.repository.JavaQuestionRepositoryImpl;
 
+@Service
 public class JavaQuestionService extends QuestionServiceImpl {
 
     public JavaQuestionService(JavaQuestionRepositoryImpl javaQuestionRepository) {

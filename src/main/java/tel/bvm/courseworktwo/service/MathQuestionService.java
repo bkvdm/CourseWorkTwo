@@ -1,7 +1,9 @@
 package tel.bvm.courseworktwo.service;
 
+import org.springframework.stereotype.Service;
 import tel.bvm.courseworktwo.repository.MathQuestionRepositoryImpl;
 
+@Service
 public class MathQuestionService extends QuestionServiceImpl {
 
     public MathQuestionService(MathQuestionRepositoryImpl mathQuestionRepository) {
