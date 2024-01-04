@@ -15,13 +15,13 @@ public class ExaminerServiceImpl implements ExaminerService {
 
     private JavaQuestionService javaQuestionService;
     private MathQuestionService mathQuestionService;
-    private ExaminerService examinerService;
+//    private ExaminerService examinerService;
 
-    @Autowired
+//    @Autowired
     public ExaminerServiceImpl(JavaQuestionService javaQuestionService, MathQuestionService mathQuestionService) {
         this.javaQuestionService = javaQuestionService;
         this.mathQuestionService = mathQuestionService;
-        this.examinerService = examinerService;
+//        this.examinerService = examinerService;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class ExaminerServiceImpl implements ExaminerService {
             throw new QuestionsFull("Количество экзаменационных вопросов, больше их количества в списке");
         } else {
             listExamQuestions.add(javaQuestionService.getRandomQuestion());
-            listExamQuestions.add(mathQuestionService.getRandomQuestion());
+//            listExamQuestions.add(mathQuestionService.getRandomQuestion());
             while ((listExamQuestions.size() == amount)) {
                 if (listExamQuestions.contains(javaQuestionService.getRandomQuestion()) ||
                         listExamQuestions.contains(mathQuestionService.getRandomQuestion())) {
