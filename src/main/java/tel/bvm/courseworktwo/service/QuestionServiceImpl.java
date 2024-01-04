@@ -6,6 +6,7 @@ import tel.bvm.courseworktwo.scheme.Question;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 //import static tel.bvm.courseworktwo.generator.RandomIndex.getRandomGenerator;
@@ -44,7 +45,12 @@ public abstract class QuestionServiceImpl implements QuestionService {
     @Override
     public Question getRandomQuestion() {
         int selectedQuestionIndex = randomIndex.getRandomGenerator(questionRepository.getAll().size() - 1);
-        List<Question> selectedQuestion = new ArrayList<>(questionRepository.getAll());
-        return selectedQuestion.get(selectedQuestionIndex);
+        return new ArrayList<Question>(questionRepository.getAll()).get(selectedQuestionIndex);
     }
 }
+//    @Override
+//    public Question getRandomQuestion() {
+//        int selectedQuestionIndex = randomIndex.getRandomGenerator(questionRepository.getAll().size() - 1);
+//        List<Question> selectedQuestion = new ArrayList<>(questionRepository.getAll());
+//        return selectedQuestion.get(selectedQuestionIndex);
+//    }

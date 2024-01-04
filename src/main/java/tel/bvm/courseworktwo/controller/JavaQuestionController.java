@@ -26,18 +26,18 @@ public class JavaQuestionController {
     }
 
     @GetMapping("/add")
-    public Question add(@RequestParam String question, @RequestParam String answer) {
+    public Question add(@RequestParam(value = "question", required = false) String question, @RequestParam(value = "answer", required = false) String answer) {
         return javaQuestionService.add(question, answer);
     }
 
     @GetMapping("/remove")
-    public Question remove(@RequestParam String question, @RequestParam String answer) {
+    public Question remove(@RequestParam(value = "question", required = false) String question, @RequestParam(value = "answer", required = false) String answer) {
         Question javaQuestionRemove = new Question(question, answer);
         return javaQuestionService.remove(javaQuestionRemove);
     }
 
     @GetMapping("/find")
-    public Question find(@RequestParam String question) {
+    public Question find(@RequestParam(value = "question", required = false) String question) {
         return javaQuestionService.find(question);
     }
 }
