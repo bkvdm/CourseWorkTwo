@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 public class RandomIndex {
     public int getRandomGenerator(int maxValue) {
         java.util.Random random = new java.util.Random();
-        int minValue = 1;
+        int minValue = 0;
         return random.nextInt((maxValue - minValue) + 1);
     }
 }
