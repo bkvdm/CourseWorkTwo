@@ -14,7 +14,7 @@ import java.util.Collection;
 @RequestMapping("/exam/math")
 public class MathQuestionController {
 
-    private QuestionService mathQuestionService;
+    private final QuestionService mathQuestionService;
 
     public MathQuestionController(@Qualifier("mathQuestionService") QuestionService question) {
         this.mathQuestionService = question;

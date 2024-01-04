@@ -1,6 +1,7 @@
 package tel.bvm.courseworktwo.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import tel.bvm.courseworktwo.exception.QuestionsFull;
 import tel.bvm.courseworktwo.exception.QuestionsNull;
@@ -13,12 +14,12 @@ import java.util.List;
 @Service
 public class ExaminerServiceImpl implements ExaminerService {
 
-    private JavaQuestionService javaQuestionService;
-    private MathQuestionService mathQuestionService;
+    private final QuestionService javaQuestionService;
+    private final QuestionService mathQuestionService;
 //    private ExaminerService examinerService;
 
 //    @Autowired
-    public ExaminerServiceImpl(JavaQuestionService javaQuestionService, MathQuestionService mathQuestionService) {
+    public ExaminerServiceImpl(@Qualifier ("javaQuestionService") QuestionService javaQuestionService, @Qualifier ("mathQuestionService") QuestionService mathQuestionService) {
         this.javaQuestionService = javaQuestionService;
         this.mathQuestionService = mathQuestionService;
 //        this.examinerService = examinerService;

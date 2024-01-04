@@ -2,6 +2,7 @@ package tel.bvm.courseworktwo.postConstructQuestions;
 
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 import tel.bvm.courseworktwo.repository.JavaQuestionRepositoryImpl;
 import tel.bvm.courseworktwo.repository.MathQuestionRepositoryImpl;
@@ -10,14 +11,14 @@ import tel.bvm.courseworktwo.repository.QuestionRepository;
 @Component
 public class DefaultQuestions {
 
-    private JavaQuestionRepositoryImpl javaQuestionRepository;
+    private  final QuestionRepository javaQuestionRepository;
 
-    private MathQuestionRepositoryImpl mathQuestionRepository;
+    private final QuestionRepository mathQuestionRepository;
 
     @Autowired
-    public DefaultQuestions(QuestionRepository QuestionRepository) {
-//        this.javaQuestionRepository = javaQuestionRepository;
-//        this.mathQuestionRepository = mathQuestionRepository;
+    public DefaultQuestions(@Qualifier ("javaQuestionRepositoryImpl") QuestionRepository javaQuestionRepositoryImpl, @Qualifier ("mathQuestionRepositoryImpl") QuestionRepository mathQuestionRepositoryImpl) {
+        this.javaQuestionRepository = javaQuestionRepositoryImpl;
+        this.mathQuestionRepository = mathQuestionRepositoryImpl;
     }
 
     @PostConstruct

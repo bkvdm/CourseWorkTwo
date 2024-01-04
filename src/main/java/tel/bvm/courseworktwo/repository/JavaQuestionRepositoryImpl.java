@@ -1,13 +1,13 @@
 package tel.bvm.courseworktwo.repository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class JavaQuestionRepositoryImpl extends QuestionRepositoryImpl {
-    protected JavaQuestionRepositoryImpl(QuestionRepositoryImpl questionRepository) {
-        super(questionRepository);
-    }
+
 }
+//    @Autowired
 //    private JavaQuestionRepositoryImpl QuestionRepository;
 //
 //    public JavaQuestionRepositoryImpl(JavaQuestionRepositoryImpl questionRepository) {

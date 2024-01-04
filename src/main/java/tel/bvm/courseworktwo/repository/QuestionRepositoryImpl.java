@@ -10,15 +10,11 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
+
 //@Service
 public abstract class QuestionRepositoryImpl implements QuestionRepository {
-    private QuestionRepositoryImpl questionRepository;
 
-    protected QuestionRepositoryImpl(QuestionRepositoryImpl questionRepository) {
-        this.questionRepository = questionRepository;
-    }
-
-    Map<String, String> registerQuestionsWithAnswers = new HashMap<>();
+    private final Map<String, String> registerQuestionsWithAnswers = new HashMap<>();
 
     @Override
     public Question add(String question, String answer) {

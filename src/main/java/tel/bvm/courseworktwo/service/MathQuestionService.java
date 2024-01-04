@@ -1,12 +1,14 @@
 package tel.bvm.courseworktwo.service;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import tel.bvm.courseworktwo.repository.MathQuestionRepositoryImpl;
+import tel.bvm.courseworktwo.repository.QuestionRepository;
 
 @Service
 public class MathQuestionService extends QuestionServiceImpl {
 
-    public MathQuestionService(MathQuestionRepositoryImpl mathQuestionRepository) {
+    public MathQuestionService(@Qualifier ("mathQuestionRepositoryImpl") QuestionRepository  mathQuestionRepository) {
         super(mathQuestionRepository);
     }
 //    public class MathQuestionTestService implements QuestionTestService{

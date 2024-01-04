@@ -10,7 +10,7 @@ import java.util.List;
 import static tel.bvm.courseworktwo.generator.RandomIndex.getRandomGenerator;
 
 public abstract class QuestionServiceImpl implements QuestionService {
-    private QuestionRepository questionRepository;
+    private final QuestionRepository questionRepository;
 
     protected QuestionServiceImpl(QuestionRepository questionRepository) {
         this.questionRepository = questionRepository;

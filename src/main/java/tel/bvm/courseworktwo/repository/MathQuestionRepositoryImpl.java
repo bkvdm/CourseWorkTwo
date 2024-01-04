@@ -4,9 +4,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class MathQuestionRepositoryImpl extends QuestionRepositoryImpl {
-    protected MathQuestionRepositoryImpl(QuestionRepositoryImpl questionRepository) {
-        super(questionRepository);
-    }
+
 }
 //    private MathQuestionRepositoryImpl QuestionRepository;
 //
