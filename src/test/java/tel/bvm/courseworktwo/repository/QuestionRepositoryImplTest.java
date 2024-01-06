@@ -40,6 +40,12 @@ class QuestionRepositoryImplTest {
         javaQuestionRepositoryOut.add(QUESTION_SIX.getQuestion(), QUESTION_SIX.getAnswer());
         Assertions.assertThrows(QuestionNotFound.class, () -> javaQuestionRepositoryOut.remove(new Question(QUESTION_FIVE.getQuestion(), null)));
     }
+    @Test
+    void removeMathQuestionNotFoundExceptionVerify() {
+        Assertions.assertThrows(QuestionNotFound.class, () -> mathQuestionRepositoryOut.remove(new Question(QUESTION_FIVE.getQuestion(), null)));
+        mathQuestionRepositoryOut.add(QUESTION_SIX.getQuestion(), QUESTION_SIX.getAnswer());
+        Assertions.assertThrows(QuestionNotFound.class, () -> mathQuestionRepositoryOut.remove(new Question(QUESTION_FIVE.getQuestion(), null)));
+    }
 
     @Test
     void findJavaQuestionNotFoundExceptionVerify() {
@@ -56,7 +62,7 @@ class QuestionRepositoryImplTest {
     }
 
     @Test
-    void getAll() {
+    void getAllJava() {
 
     }
 }
