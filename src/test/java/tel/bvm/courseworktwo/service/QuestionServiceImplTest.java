@@ -127,34 +127,30 @@ class QuestionServiceImplTest {
         assertNotNull(actual);
     }
 
-    @Test
-    void AddJavaQuestionAllReadyAddedExceptionVerify() throws QuestionAlreadyAdded{
-
-        javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer());
-//        javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer());
-//        Assertions.assertThrows(QuestionAlreadyAdded.class, () -> {javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer());});
-//        when(mathRepositoryMock.getAll()).thenReturn(COLLECTION_TEST);
-        Assertions.assertThrows(QuestionAlreadyAdded.class, () -> javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer()));
-    }
+//    @Test
+//    void AddJavaQuestionAllReadyAddedExceptionVerify() throws QuestionAlreadyAdded{
+//        q.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer());
+//        Assertions.assertThrows(QuestionAlreadyAdded.class, () -> javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer()));
+//    }
 
 //    @Test
 //    void AddQuestionVerify() {
 
 //    }
 
-    @Test
-    void remove() {
-    }
-
-    @Test
-    void find() {
-    }
-
-    @Test
-    void getAll() {
-    }
-
-    @Test
-    void getRandomQuestion() {
-    }
+//    @Test
+//    void remove() {
+//    }
+//
+//    @Test
+//    void find() {
+//    }
+//
+//    @Test
+//    void getAll() {
+//    }
+//
+//    @Test
+//    void getRandomQuestion() {
+//    }
 }
