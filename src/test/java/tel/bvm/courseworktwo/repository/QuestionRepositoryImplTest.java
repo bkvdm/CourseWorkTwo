@@ -11,6 +11,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import tel.bvm.courseworktwo.constants.DefaultQuestionTest;
 import tel.bvm.courseworktwo.exception.QuestionAlreadyAdded;
 import tel.bvm.courseworktwo.exception.QuestionNotFound;
+import tel.bvm.courseworktwo.scheme.Question;
 import tel.bvm.courseworktwo.service.QuestionServiceImpl;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,8 +35,10 @@ class QuestionRepositoryImplTest {
     }
 
     @Test
-    void remove() {
-
+    void removeJavaQuestionNotFoundExceptionVerify() {
+        Assertions.assertThrows(QuestionNotFound.class, () -> javaQuestionRepositoryOut.remove(new Question(QUESTION_FIVE.getQuestion(), null)));
+        javaQuestionRepositoryOut.add(QUESTION_SIX.getQuestion(), QUESTION_SIX.getAnswer());
+        Assertions.assertThrows(QuestionNotFound.class, () -> javaQuestionRepositoryOut.remove(new Question(QUESTION_FIVE.getQuestion(), null)));
     }
 
     @Test
@@ -52,9 +55,8 @@ class QuestionRepositoryImplTest {
         Assertions.assertThrows(QuestionNotFound.class, () -> mathQuestionRepositoryOut.find(QUESTION_FIVE.getQuestion()));
     }
 
-
-
     @Test
     void getAll() {
+
     }
 }
