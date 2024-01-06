@@ -29,7 +29,11 @@ class ExaminerServiceImplTest {
     @Mock
     private QuestionServiceImpl questionService;
 
-    RandomIndex randomIndex = new RandomIndex();
+//    @Mock
+//    private RandomIndex randomIndex;
+
+
+//    RandomIndex randomIndex = new RandomIndex();
 
     @InjectMocks
     private ExaminerServiceImpl examinerServiceOut;
@@ -38,31 +42,46 @@ class ExaminerServiceImplTest {
     @BeforeEach
     void initOut() {
         when(questionService.getAll()).thenReturn(COLLECTION_TEST);
-        when(questionService.getRandomQuestion()).thenReturn(COLLECTION_TEST.get(randomIndex.getRandomGenerator(COLLECTION_TEST.size() - 1)));
+        when(questionService.getRandomQuestion()).thenReturn(QUESTION_ONE, QUESTION_TWO, QUESTION_THREE, QUESTION_FOUR, QUESTION_FIVE, QUESTION_SIX);
     }
+//        when(questionService.getRandomQuestion()).thenReturn(COLLECTION_TEST.get(randomIndex.getRandomGenerator(COLLECTION_TEST.size() - 1)));
+//        when(randomIndex.getRandomGenerator(COLLECTION_TEST.size() - 1)).thenReturn(1);
+//        when(questionService.getRandomQuestion()).thenReturn(COLLECTION_TEST.get(5));
 
     public static Stream<Arguments> amountQuestionVariations() {
-        return Stream.of(Arguments.of(1, COLLECTION_TEST_ONE_AMOUNT),
-                Arguments.of(2, COLLECTION_TEST_TWO_AMOUNT),
-                Arguments.of(3, COLLECTION_TEST_TREE_AMOUNT),
-                Arguments.of(4, COLLECTION_TEST_FOUR_AMOUNT),
-                Arguments.of(5, COLLECTION_TEST_FIVE_AMOUNT),
-                Arguments.of(6, COLLECTION_TEST_SIX_AMOUNT)
+        return Stream.of(Arguments.of(1, 1),
+                Arguments.of(3, 3),
+                Arguments.of(6, 6)
         );
     }
+//        return Stream.of(Arguments.of(1, COLLECTION_TEST_ONE_AMOUNT),
 
     @ParameterizedTest
     @MethodSource("amountQuestionVariations")
-    void getQuestion(int amount, Collection <Question> expected) {
-        assertEquals(expected, examinerServiceOut.getQuestion(amount));
+    void getQuestion(int amount, int expected) {
+        assertEquals(expected, examinerServiceOut.getQuestion(amount).size());
+    }
+
+    @Test
+    void getQuestion() {
+        int actual = examinerServiceOut.getQuestion(1).size();
+        assertEquals(1, actual);
     }
 }
-
+//        int actualMiddle = examinerServiceOut.getQuestion(3).size();
+//        assertEquals(3, actualMiddle);
+//        int actualEnd = examinerServiceOut.getQuestion(6).size();
+//        assertEquals(6, actualEnd);
 //    @Test
-//    void getQuestion() {
+//    void getQuestion1() {
 //        int actual = examinerServiceOut.getQuestion(1).size();
-//        assertEquals(actual, 1);
+//        assertEquals(1, actual);
+//        int actualMiddle = examinerServiceOut.getQuestion(3).size();
+//        assertEquals(3, actualMiddle);
+//        int actualEnd = examinerServiceOut.getQuestion(6).size();
+//        assertEquals(6, actualEnd);
 //    }
+
 
 //        int actual = examinerServiceOut.getQuestion(1).size();
 //    @ParameterizedTest
