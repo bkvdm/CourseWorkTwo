@@ -1,5 +1,6 @@
 package tel.bvm.courseworktwo.service;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,6 +11,8 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
+import tel.bvm.courseworktwo.exception.QuestionsFull;
+import tel.bvm.courseworktwo.exception.QuestionsNull;
 import tel.bvm.courseworktwo.generator.RandomIndex;
 import tel.bvm.courseworktwo.repository.JavaQuestionRepositoryImpl;
 import tel.bvm.courseworktwo.repository.MathQuestionRepositoryImpl;
@@ -31,18 +34,16 @@ class ExaminerServiceImplTest {
 
 //    @Mock
 //    private RandomIndex randomIndex;
-
-
 //    RandomIndex randomIndex = new RandomIndex();
 
     @InjectMocks
     private ExaminerServiceImpl examinerServiceOut;
 
-
     @BeforeEach
     void initOut() {
         when(questionService.getAll()).thenReturn(COLLECTION_TEST);
         when(questionService.getRandomQuestion()).thenReturn(QUESTION_ONE, QUESTION_TWO, QUESTION_THREE, QUESTION_FOUR, QUESTION_FIVE, QUESTION_SIX);
+//        when(mathQuestionService.getAll().size() + javaQuestionService.getAll().size().thenReturn();
     }
 //        when(questionService.getRandomQuestion()).thenReturn(COLLECTION_TEST.get(randomIndex.getRandomGenerator(COLLECTION_TEST.size() - 1)));
 //        when(randomIndex.getRandomGenerator(COLLECTION_TEST.size() - 1)).thenReturn(1);
@@ -58,16 +59,36 @@ class ExaminerServiceImplTest {
 
     @ParameterizedTest
     @MethodSource("amountQuestionVariations")
-    void getQuestion(int amount, int expected) {
+    void getQuestionAmountVerify(int amount, int expected) {
         assertEquals(expected, examinerServiceOut.getQuestion(amount).size());
     }
 
     @Test
-    void getQuestion() {
-        int actual = examinerServiceOut.getQuestion(1).size();
-        assertEquals(1, actual);
+    void getQuestionAmountTextVerify() {
+        Collection<Question> actualTwo = examinerServiceOut.getQuestion(2);
+        assertEquals(COLLECTION_TEST_TWO_AMOUNT, actualTwo);
+    }
+
+    @Test
+    void getQuestionAmountQuestionFullExceptionVerify() {
+//        when(questionService.getAll().size()).thenReturn(6);
+//        String actual = throw new examinerServiceOut.getQuestion(13);
+        Assertions.assertThrows(QuestionsFull.class, () -> examinerServiceOut.getQuestion(13));
+    }
+
+    @Test
+    void getQuestionAmountQuestionNullExceptionVerify() {
+//        when(questionService.getAll().size()).thenReturn(6);
+        Assertions.assertThrows(QuestionsNull.class, () -> examinerServiceOut.getQuestion(0));
     }
 }
+//        Assertions.assertThrows(QuestionsNull.class, () -> mathQuestionRepositoryOut.getAll());
+
+//    @Test
+//    void getQuestionAmountTextVerify() {
+//        int actual = examinerServiceOut.getQuestion(1).size();
+//        assertEquals(1, actual);
+//    }
 //        int actualMiddle = examinerServiceOut.getQuestion(3).size();
 //        assertEquals(3, actualMiddle);
 //        int actualEnd = examinerServiceOut.getQuestion(6).size();
