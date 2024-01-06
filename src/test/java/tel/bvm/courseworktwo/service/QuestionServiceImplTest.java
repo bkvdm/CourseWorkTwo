@@ -17,6 +17,7 @@ import tel.bvm.courseworktwo.scheme.Question;
 
 
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.NoSuchElementException;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -34,12 +35,21 @@ class QuestionServiceImplTest {
 
     @InjectMocks
     private JavaQuestionService javaServiceOut;
+    @InjectMocks
     private MathQuestionService mathServiceOut;
+
+//    private QuestionServiceImpl questionService;
+
 
     @BeforeEach
     void setUp() {
 //        when(javaServiceOut.getAll()).thenReturn(COLLECTION_TEST);
-    }
+        when(javaServiceOut.getAll()).thenReturn(COLLECTION_TEST);
+//        questionService = new QuestionServiceImpl(new HashMap<>()) {
+        }
+
+
+//    }
 
     @Test
     void addJavaQuestionVerify() {
@@ -118,8 +128,12 @@ class QuestionServiceImplTest {
     }
 
     @Test
-    void AddJavaQuestionAllReadyAddedExceptionVerify() {
-        when(mathRepositoryMock.getAll()).thenReturn(COLLECTION_TEST);
+    void AddJavaQuestionAllReadyAddedExceptionVerify() throws QuestionAlreadyAdded{
+
+        javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer());
+//        javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer());
+//        Assertions.assertThrows(QuestionAlreadyAdded.class, () -> {javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer());});
+//        when(mathRepositoryMock.getAll()).thenReturn(COLLECTION_TEST);
         Assertions.assertThrows(QuestionAlreadyAdded.class, () -> javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer()));
     }
 
