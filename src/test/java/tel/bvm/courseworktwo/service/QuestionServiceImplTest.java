@@ -44,7 +44,7 @@ class QuestionServiceImplTest {
     @BeforeEach
     void setUp() {
 //        when(javaServiceOut.getAll()).thenReturn(COLLECTION_TEST);
-        when(javaServiceOut.getAll()).thenReturn(COLLECTION_TEST);
+//        when(javaServiceOut.getAll()).thenReturn(COLLECTION_TEST);
 //        questionService = new QuestionServiceImpl(new HashMap<>()) {
         }
 

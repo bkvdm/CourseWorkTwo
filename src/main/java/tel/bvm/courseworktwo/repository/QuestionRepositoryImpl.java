@@ -33,8 +33,8 @@ public abstract class QuestionRepositoryImpl implements QuestionRepository {
         Question questionNew = new Question(question, answer);
         if (registerQuestionsWithAnswers.get(question) == null) {
             registerQuestionsWithAnswers.put(questionNew.getQuestion(), questionNew.getAnswer());
+            return questionNew;
         } else throw new QuestionAlreadyAdded("Вопрос уже был ранее добавлен");
-        return questionNew;
     }
 
     @Override
