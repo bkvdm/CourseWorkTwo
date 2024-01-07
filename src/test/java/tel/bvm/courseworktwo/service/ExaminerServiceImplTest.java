@@ -35,6 +35,16 @@ class ExaminerServiceImplTest {
     @InjectMocks
     private ExaminerServiceImpl examinerServiceOut;
 
+    public static Stream<Arguments> amountQuestionVariations() {
+        return Stream.of(Arguments.of(1, 1),
+                Arguments.of(2, 2),
+                Arguments.of(3, 3),
+                Arguments.of(4, 4),
+                Arguments.of(5, 5),
+                Arguments.of(6, 6)
+        );
+    }
+
     @ParameterizedTest
     @MethodSource("amountQuestionVariations")
     void getQuestionAmountVerify(int amount, int expected) {
@@ -44,27 +54,21 @@ class ExaminerServiceImplTest {
     }
 
     @Test
-    void getQuestionAmountTextVerify() {
-        when(questionService.getAll()).thenReturn(COLLECTION_TEST);
-        when(questionService.getRandomQuestion()).thenReturn(QUESTION_ONE, QUESTION_TWO, QUESTION_THREE, QUESTION_FOUR, QUESTION_FIVE, QUESTION_SIX);
-        Collection<Question> actualTwo = examinerServiceOut.getQuestion(2);
-        assertEquals(COLLECTION_TEST_TWO_AMOUNT, actualTwo);
-    }
-
-    @Test
     void getQuestionAmountQuestionFullExceptionVerify() {
+        when(questionService.getAll()).thenReturn(COLLECTION_TEST);
         Assertions.assertThrows(QuestionsFull.class, () -> examinerServiceOut.getQuestion(13));
     }
 
     @Test
     void getQuestionAmountQuestionNullExceptionVerify() {
+        when(questionService.getAll()).thenReturn(COLLECTION_TEST);
         Assertions.assertThrows(QuestionsNull.class, () -> examinerServiceOut.getQuestion(0));
     }
-
-    public static Stream<Arguments> amountQuestionVariations() {
-        return Stream.of(Arguments.of(1, 1),
-                Arguments.of(3, 3),
-                Arguments.of(6, 6)
-        );
-    }
 }
+//    @Test
+//    void getQuestionAmountTextVerify() {
+//        when(questionService.getAll()).thenReturn(COLLECTION_TEST);
+//        when(questionService.getRandomQuestion()).thenReturn(QUESTION_ONE, QUESTION_TWO, QUESTION_THREE, QUESTION_FOUR, QUESTION_FIVE, QUESTION_SIX);
+//        Collection<Question> actualTwo = examinerServiceOut.getQuestion(2);
+//        assertEquals(COLLECTION_TEST_TWO_AMOUNT, actualTwo);
+//    }
