@@ -27,7 +27,6 @@ import static tel.bvm.courseworktwo.constants.DefaultQuestionTest.*;
 @ExtendWith(MockitoExtension.class)
 class QuestionServiceImplTest {
 
-//    private final DefaultQuestionTest defaultQuestionTest = new DefaultQuestionTest();
     @Mock
     private JavaQuestionRepositoryImpl javaRepositoryMock;
     @Mock
@@ -38,18 +37,9 @@ class QuestionServiceImplTest {
     @InjectMocks
     private MathQuestionService mathServiceOut;
 
-//    private QuestionServiceImpl questionService;
-
-
     @BeforeEach
     void setUp() {
-//        when(javaServiceOut.getAll()).thenReturn(COLLECTION_TEST);
-//        when(javaServiceOut.getAll()).thenReturn(COLLECTION_TEST);
-//        questionService = new QuestionServiceImpl(new HashMap<>()) {
-        }
-
-
-//    }
+    }
 
     @Test
     void addJavaQuestionVerify() {
@@ -126,31 +116,4 @@ class QuestionServiceImplTest {
         assertEquals(COLLECTION_TEST, actual);
         assertNotNull(actual);
     }
-
-//    @Test
-//    void AddJavaQuestionAllReadyAddedExceptionVerify() throws QuestionAlreadyAdded{
-//        q.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer());
-//        Assertions.assertThrows(QuestionAlreadyAdded.class, () -> javaServiceOut.add(QUESTION_ONE.getQuestion(), QUESTION_ONE.getAnswer()));
-//    }
-
-//    @Test
-//    void AddQuestionVerify() {
-
-//    }
-
-//    @Test
-//    void remove() {
-//    }
-//
-//    @Test
-//    void find() {
-//    }
-//
-//    @Test
-//    void getAll() {
-//    }
-//
-//    @Test
-//    void getRandomQuestion() {
-//    }
 }

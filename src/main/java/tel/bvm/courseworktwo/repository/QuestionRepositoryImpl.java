@@ -11,23 +11,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-//@Service
 public abstract class QuestionRepositoryImpl implements QuestionRepository {
 
     private final Map<String, String> registerQuestionsWithAnswers = new HashMap<>();
 
-
-
-//    public Question add(String question, String answer) {
-//        Question questionNew = new Question(question, answer);
-//        if (registerQuestionsWithAnswers.get(questionNew.getQuestion()) == null) {
-//            registerQuestionsWithAnswers.put(questionNew.getQuestion(), questionNew.getAnswer());
-//        } else {
-//            throw new QuestionAlreadyAdded("Вопрос уже был ранее добавлен");
-//        }
-//        return questionNew;
-//    }
-//
     @Override
     public Question add(String question, String answer) {
         Question questionNew = new Question(question, answer);
@@ -66,8 +53,3 @@ public abstract class QuestionRepositoryImpl implements QuestionRepository {
                 .collect(Collectors.toList());
     }
 }
-//    questionNew.getQuestion(), questionNew.getAnswer())
-
-//            if (registerQuestionsWithAnswers.put(questionNew.getQuestion(), questionNew.getAnswer()) != null) {
-//                throw new QuestionAlreadyAdded("Вопрос уже был ранее добавлен");
-//            }

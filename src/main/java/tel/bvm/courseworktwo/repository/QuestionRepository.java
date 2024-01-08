@@ -13,27 +13,3 @@ public interface QuestionRepository {
 
     Collection<Question> getAll();
 }
-
-//    JavaQuestion remove(JavaQuestion javaQuestion);
-//    Random getRandomQuestion(int maxValue);
-//    MathQuestion add(String question, String answer);
-//
-//    MathQuestion remove(MathQuestion question);
-//
-//    JavaQuestion add(JavaQuestion question);
-//
-//    Collection<MathQuestion> getAll();
-//
-//    JavaQuestion remove(JavaQuestion question);
-//
-//    Random getRandomQuestion(int maxValue);
-//    MathQuestion add(String question, String answer);
-//
-//    JavaQuestion remove(JavaQuestion question);
-//
-//    MathQuestion remove(MathQuestion question);
-//
-//    Collection<MathQuestion> getAll();
-//
-//    Random getRandomQuestion(int maxValue);
-//}
